@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple HTML5 Canvas Paint App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">  </head>
+  <body>
+    <div id="paintbg">
+    <p id="title">SIMPLE  HTML5  PAINT</p>
+      <div id="colorpanel">
+      <center><p>Colors</p></center>
+       <div id="contain">
+         <div class="palette red" id="red" onclick="changeColors(this)"></div>
+         <div class="palette red1" id="red1" onclick="changeColors(this)"></div>
+         <div class="palette red2" id="red2" onclick="changeColors(this)"></div>
+         <div class="palette orange" id="orange" onclick="changeColors(this)"></div>
+         <div class="palette orange1" id="orange1" onclick="changeColors(this)"></div>
+         <div class="palette orange2" id="orange2" onclick="changeColors(this)"></div>
+         <div class="palette yellow" id="yellow" onclick="changeColors(this)"></div>
+         <div class="palette yellow1" id="yellow1" onclick="changeColors(this)"></div>
+         <div class="palette yellow2" id="yellow2" onclick="changeColors(this)"></div>
+         <div class="palette green" id="green" onclick="changeColors(this)"></div>
+         <div class="palette green1" id="green1" onclick="changeColors(this)"></div>
+         <div class="palette green2" id="green2" onclick="changeColors(this)"></div>
+         <div class="palette blue" id="blue" onclick="changeColors(this)"></div>
+         <div class="palette blue1" id="blue1" onclick="changeColors(this)"></div>
+         <div class="palette blue2" id="blue2" onclick="changeColors(this)"></div>
+         <div class="palette indigo" id="indigo" onclick="changeColors(this)"></div>
+         <div class="palette indigo1" id="indigo1" onclick="changeColors(this)"></div>
+         <div class="palette indigo2" id="indigo2" onclick="changeColors(this)"></div>
+         <div class="palette purple" id="purple" onclick="changeColors(this)"></div>
+         <div class="palette purple1" id="purple1" onclick="changeColors(this)"></div>
+         <div class="palette purple2" id="purple2" onclick="changeColors(this)"></div>
+         <div class="palette black" id="black" onclick="changeColors(this)"></div>
+         <div class="palette black1" id="black1" onclick="changeColors(this)"></div>
+         <div class="palette black2" id="black2" onclick="changeColors(this)"></div>
+       </div>
+
+       <div id="erasing"><center><p>Eraser</p></center></div>
+       <div class="palette white" id="erase" onclick="changeColors(this)"></div>
+       <br />
+       </div>
+
+      <div id="canvasarea">
+       <canvas id="myCanvas" width="700" height="500" style="border:1.5px solid #000000;">
+        Canvas not supporeted in IE 8 and earlier versions srry</canvas>
+      </div>
+
+      <div id="linepanel">
+       <center><p>Brush Width</p></center>
+        <form>
+          <input type="range" id="myRange" name="amountRange" value="1" min="1" max="50" oninput="this.form.amountInput.value=this.value" onclick="lineWidthRange()">
+          <div id="sliderInput">
+            </p><input type="number" name="amountInput" min="1" max="50" value="1" oninput="this.form.amountRange.value=this.value" />
+          </div>
+        </form>
+        <br />
+        <center><p>Brush Style</p>
+        <input type="button" value="Round" id="round" onclick="lines();changeBrushStyle(this);"> <br />
+        <input type="button" value="Square" id="square" onclick="lines();changeBrushStyle(this);"> <br />
+        <input type="button" value="Rough" id="rough" onclick="lines();changeBrushStyle(this);"> <br />
+
+        <center><p>Shapes</p></center>
+        <div class="shapes shaperectangle" id="shaperectangle" onclick="rectangle()"></div>
+        <div class="shape shapetriangle" id="shapetriangle" onclick="triangle()"></div>
+       
+      </center>
+      </div>      
+      <div id="space">
+         <button class="button" onclick="erase()">CLEAR</button>
+         <button class="button"><a href="#" id="dwnld" download="my-file-name.png">SAVE</a></button>
+      </div>
+    </div>
+    <script type="text/javascript" src="drawing.js"></script>
+  </body>
+</html>
+
